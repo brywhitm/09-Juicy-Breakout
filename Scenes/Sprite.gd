@@ -1,9 +1,9 @@
 extends Sprite
 
-var scene_res=preload("res://Scenes/Tile.tscn")
+var scene_res=preload("res://Scenes/TileTrap.tscn")
 
 var count = 6
-var xrad=50
+var xrad=60
 var radius = Vector2(xrad, 0)
 var center = Vector2(position.x, position.y)
 
@@ -18,5 +18,5 @@ func _input(event):
             node.look_at(center)
             get_parent().add_child(node)
 
-        count = 14
-        radius = Vector2(xrad+100, 0)
+        count = 12
+        radius = Vector2(xrad+60, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/World.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/paddle.gd" type="Script" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Scenes/Node2D.gd" type="Script" id=9]
 [ext_resource path="res://Assets/ball.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Sprite.gd" type="Script" id=11]
-[ext_resource path="res://Assets/tile_blue.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.311, 12.2888 )
@@ -383,11 +382,3 @@ script = ExtResource( 9 )
 [node name="Sprite" type="Sprite" parent="Node2D"]
 texture = ExtResource( 10 )
 script = ExtResource( 11 )
-
-[node name="blocks" type="Node2D" parent="."]
-editor/display_folded = true
-visible = false
-position = Vector2( 218.794, 542.809 )
-
-[node name="Sprite" type="Sprite" parent="blocks"]
-texture = ExtResource( 12 )
