@@ -3,6 +3,8 @@ extends Node
 export var score = 0
 export var lives = 4
 
+func _ready():
+ $Music.playing=true
 func increase_score(s):
  score += int(s)
  find_node("Score").update_score()

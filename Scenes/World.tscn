@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/World.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/paddle.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/ball.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Sprite.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=11]
+[ext_resource path="res://Sound/MDK & Neowing - Final Smash.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.311, 12.2888 )
@@ -123,3 +124,7 @@ shape = SubResource( 4 )
 position = Vector2( 512.627, 297.794 )
 current = true
 script = ExtResource( 11 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -30.0

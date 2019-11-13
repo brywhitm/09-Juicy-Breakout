@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MDK & Neowing - Final Smash.wav-07f12dab8fa5fe464dd54d30afd2f838.sample"
+
+[deps]
+
+source_file="res://Sound/MDK & Neowing - Final Smash.wav"
+dest_files=[ "res://.import/MDK & Neowing - Final Smash.wav-07f12dab8fa5fe464dd54d30afd2f838.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
