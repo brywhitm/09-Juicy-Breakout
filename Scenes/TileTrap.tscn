@@ -1,22 +1,89 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/tile.gd" type="Script" id=1]
 [ext_resource path="res://Assets/grayTrap.png" type="Texture" id=2]
+[ext_resource path="res://paintFiles/grayTrap-crack-Bottom2.png" type="Texture" id=3]
+[ext_resource path="res://paintFiles/grayTrap-crack-Top1.png" type="Texture" id=4]
+[ext_resource path="res://paintFiles/grayTrap-crack-Bottom1.png" type="Texture" id=5]
+[ext_resource path="res://paintFiles/grayTrap-crack-Top2.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/SpawnTween.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Shake.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 15.5778 )
+extents = Vector2( 15.9604, 32.1682 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 50, 50, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.7
+angular_velocity = 10.0
+angular_velocity_random = 0.7
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 5.0
 
 [node name="Tile" type="StaticBody2D" groups=[
 "Tiles",
 ]]
-position = Vector2( 160, 384 )
+position = Vector2( 486.224, 318.09 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+editor/display_folded = true
+margin_left = -16.0
+margin_top = -32.0
+margin_right = 16.0
+margin_bottom = 32.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="Tile" type="Sprite" parent="ColorRect"]
+position = Vector2( 16, 32 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="ShatterEffect2" type="Particles2D" parent="."]
+emitting = false
+amount = 1
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 2 )
+texture = ExtResource( 3 )
+
+[node name="ShatterEffect3" type="Particles2D" parent="."]
+emitting = false
+amount = 1
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 2 )
+texture = ExtResource( 4 )
+
+[node name="ShatterEffect" type="Particles2D" parent="."]
+emitting = false
+amount = 1
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 2 )
+texture = ExtResource( 5 )
+
+[node name="ShatterEffect4" type="Particles2D" parent="."]
+emitting = false
+amount = 1
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 2 )
+texture = ExtResource( 6 )
+
+[node name="SpawnTween" type="Tween" parent="."]
+script = ExtResource( 7 )
+
+[node name="Shake" type="Tween" parent="."]
+script = ExtResource( 8 )
